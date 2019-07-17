@@ -180,8 +180,8 @@ export default class SnackBar extends Component {
             position === 'bottom' && {bottom: bottom}
         ];
         let buttonTextStyle = [{color: buttonColor, fontFamily: "Roboto-Medium", textAlign: 'left', fontSize: 16, fontWeight: 'bold'}];
-        let messageTextStyle = [{color: textColor, fontFamily: "Roboto-Regular", fontSize: 12, fontWeight: 'bold', marginLeft: 3}];
-        let responsiveImage = [{width: '15%', height: undefined, aspectRatio: 1}];
+        let messageTextStyle = [{color: textColor, fontFamily: "Roboto-Regular", fontSize: 12, fontWeight: 'bold', marginLeft: 3, alignItems: 'center', justifyContent: 'center'}];
+        let responsiveImage = [{width: '13%', height: undefined, aspectRatio: 1, alignItems: 'center', justifyContent: 'center', marginTop: 2}];
 
         if (show) {
             return (
@@ -194,20 +194,22 @@ export default class SnackBar extends Component {
                         
                     <View style={[{flex: 10, paddingVertical: 14, justifyContent: 'center', flexDirection: 'row'}]}>
                     <Image resizeMode="contain" source={WarningLogo} style={responsiveImage} />
-                        <Text ellipsizeMode="tail" numberOfLines={3} style={messageTextStyle}>
+                       <View style={{ marginLeft: 10, justifyContent: 'center', alignSelf: 'center', width: '90%' }}>
+                        <Text numberOfLines={3} style={messageTextStyle}>
                             {message}
                         </Text>
+                        </View>
                     </View>
                     {
                         confirmText ?
-                        <View style={[{flex: 2, paddingLeft: 24}]}>
+                        <View style={[{paddingLeft: 24}]}>
                             <TouchableOpacity activeOpacity={0.7}
                                               onPress={() => {
                                                   onConfirm && onConfirm();
-                                                  this.hideSnackBar();
+                                                  this.setState({show: false});
                                               }} style={{flex: 1}}>
                                 <View style={[{
-                                    marginTop: 25 , alignItems: 'center', justifyContent: 'center', borderWidth: 0.7 , borderRadius: 40
+                                    marginTop: 25 , alignItems: 'center', justifyContent: 'center'
                                 }]}>
                                     <Text style={buttonTextStyle}>
                                         {confirmText.toUpperCase()}
