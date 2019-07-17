@@ -1,0 +1,23 @@
+{
+  "name": "@prince8verma/react-native-snackbar",
+  "version": "1.2.2",
+  "description": "Provide snackbar from top or bottom, as per requirements. Its a simple React-native library, works for both Android and IOS. It also provide swipe feature to hide snackbar.",
+  "main": "snackBar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prince8verma/react-native-snackbar.git"
+  },
+  "author": "“Prince <“prince.verma@daffodilsw.com”>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prince8verma/react-native-snackbar/issues"
+  },
+  "homepage": "https://github.com/prince8verma/react-native-snackbar#readme",
+  "dependencies": {
+    "react-native-simple-events": "^1.0.1"
+  },
+  "devDependencies": {}
+}
